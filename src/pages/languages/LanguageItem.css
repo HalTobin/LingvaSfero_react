@@ -1,0 +1,21 @@
+.Language-container {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    flex-direction: row;
+}
+
+.Language-flag-container {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.Language-flag {
+    height: 64px;
+    width: 64px;
+}

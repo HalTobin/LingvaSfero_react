@@ -3,6 +3,7 @@ import './App.css'
 
 import appLogo from './images/Logo_ALEXIS-07_1.svg'
 import AppBar from './header/AppBar';
+import Languages from './pages/languages/Languages';
 
 function App() {
   return (
@@ -11,7 +12,7 @@ function App() {
         <AppBar />
       </header>
       <body className="App-body">
-
+        <Languages />
       </body>
     </div>
   );
