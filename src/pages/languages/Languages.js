@@ -2,13 +2,7 @@ import './LanguageItem.js'
 import LanguageItem from './LanguageItem.js';
 import axios from 'axios'
 import { useState, useEffect } from 'react';
-import { BASE_URL } from '../../values/Const.js'
-
-var dummyLanguage = {
-    name: "Español",
-    img: `${BASE_URL}/res/images?iso=ESP&type=language`,
-    color: 4294951936
-}
+import { BASE_URL_LOCAL } from '../../values/Const.js'
 
 function Languages() {
 
@@ -19,9 +13,9 @@ function Languages() {
     }, []);
 
     const fetchLanguages = () => {
-        axios.get(`${BASE_URL}/language/languages`)
+        axios.get(`${BASE_URL_LOCAL}/api/language/languages`)
             .then(response => {
-                setLanguages(response);
+                setLanguages(response.data);
             })
             .catch((error) => {
                 //navigate('/login', { replace: true });
@@ -29,11 +23,14 @@ function Languages() {
     }
 
     return <div>
-        <div>{languages.map((language, index) => (
-            <LanguageItem language={language} />
+        {((languages.length > 0) && (
+            <>
+                <div>{languages.map((language, index) => (
+                    <LanguageItem language={language} />
+                ))}
+                </div>
+            </>
         ))}
-        </div>
-        <LanguageItem language={dummyLanguage} />
     </div>
 }
 
