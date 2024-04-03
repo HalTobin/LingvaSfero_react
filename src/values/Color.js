@@ -10,6 +10,5 @@ export function toColor(num) {
         r = (num & 0xFF0000) >>> 16,
         a = ((num & 0xFF000000) >>> 24) / 255;
     const colorString = `rgba(${r},${g},${b},${a})`;
-    console.log("colorString:", colorString);
     return colorString;
 }
