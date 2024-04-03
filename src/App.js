@@ -1,7 +1,6 @@
 import logo from './logo.svg';
 import './App.css'
 
-import appLogo from './images/Logo_ALEXIS-07_1.svg'
 import AppBar from './header/AppBar';
 import Languages from './pages/languages/Languages';
 
