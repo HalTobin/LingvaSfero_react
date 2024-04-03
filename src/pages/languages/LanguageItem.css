@@ -1,21 +1,40 @@
+.Language-item {
+    display: inline-block;
+    /* Ensures inline-block elements are not affected by margin collapse */
+}
+
 .Language-container {
-    width: 100px;
-    height: 100px;
+    display: flex;
+    align-items: center;
+    height: 2.5em;
     position: relative;
     overflow: hidden;
-    border-radius: 50%;
-    flex-direction: row;
+    border-radius: 64px;
+    padding: 16px;
+    /* Apply padding to the container */
 }
 
 .Language-flag-container {
-    width: 100px;
-    height: 100px;
+    width: 3em;
+    height: 3em;
     position: relative;
     overflow: hidden;
     border-radius: 50%;
+    border: 0.2em solid black;
 }
 
 .Language-flag {
-    height: 64px;
-    width: 64px;
+    height: 3em;
+    width: 3em;
+}
+
+.Language-name {
+    font-weight: bold;
+    font-size: medium;
+    color: black;
+    margin-left: 16px;
+}
+
+.Language-chevron {
+    padding-left: 16px;
 }

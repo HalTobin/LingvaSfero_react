@@ -1,26 +1,19 @@
 import './LanguageItem.css'
+import { toColor } from '../../values/Color';
+import { BsChevronRight } from "react-icons/bs";
 
 function LanguageItem({ language }) {
     return (
-        <div>
+        <div className="Language-item">
             <div className="Language-container" style={{ backgroundColor: toColor(language.color) }}>
                 <div className="Language-flag-container">
                     <img src={language.img} className="Language-flag" />
-                    <p>{language.name}</p>
                 </div>
+                <b className="Language-name">{language.name.toUpperCase()}</b>
+                <BsChevronRight className='Language-chevron' strokeWidth="1" />
             </div>
         </div>
     )
 }
-
-function toColor(num) {
-    num >>>= 0;
-    var b = num & 0xFF,
-        g = (num & 0xFF00) >>> 8,
-        r = (num & 0xFF0000) >>> 16,
-        a = ((num & 0xFF000000) >>> 24) / 255;
-    return "#" + [r, g, b, a].join("");
-}
-toColor(-5952982)
 
 export default LanguageItem;
