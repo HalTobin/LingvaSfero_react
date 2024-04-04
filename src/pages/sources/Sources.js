@@ -38,15 +38,16 @@ function Sources() {
         className="SourcesTab"
         style={{ backgroundColor: toColor(language.colorDark) }}
     >
-        <p>{language.name}</p>
-        {((sources.length > 0) && (<>
-            <div>{sources
-                .map((source, index) => (
-                    <SourceItem
-                        key={source.id}
-                        source={source} />
-                ))}</div>
-        </>))}
+        <div className="SourcesCard">
+            {((sources.length > 0) && (<>
+                <div>{sources
+                    .map((source, index) => (
+                        <SourceItem
+                            key={source.id}
+                            source={source} />
+                    ))}</div>
+            </>))}
+        </div>
     </div>
 }
 

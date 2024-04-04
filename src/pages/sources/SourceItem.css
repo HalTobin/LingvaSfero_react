@@ -1,0 +1,51 @@
+.source-card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 16px;
+    justify-content: center;
+    align-items: center;
+    background-color: #333333;
+    color: white;
+
+    flex: 1;
+    min-width: 64px;
+    max-width: calc(33.33% - 20px);
+    text-align: center;
+    padding: 20px;
+}
+
+.thumbnail-container {
+    width: 3em;
+    height: 3em;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.thumbnail {
+    width: 100%;
+    height: 3em;
+    width: 3em;
+}
+
+.info-container {
+    padding: 8px;
+}
+
+.title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.description {
+    text-align: center;
+    margin-left: 8px;
+    margin-right: 8px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+}

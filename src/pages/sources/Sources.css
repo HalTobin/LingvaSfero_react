@@ -4,3 +4,9 @@
     width: 100vw;
     max-width: 100%;
 }
+
+.SourcesCard {
+    gap: 20px;
+    justify-content: center;
+    margin: 16px auto;
+}

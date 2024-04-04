@@ -1,6 +1,7 @@
 export const Colors = {
     bg_primary: "#202020",
-    bg_secondary: "#1C0C34"
+    bg_secondary: "#1C0C34",
+    surface_gray: "#E9EEF7"
 }
 
 export function toColor(num) {
