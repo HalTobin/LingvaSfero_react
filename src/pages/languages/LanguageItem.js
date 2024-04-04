@@ -24,7 +24,10 @@ function LanguageItem({ language }) {
                     style={{ color: brightColor ? "#000" : "#FFF" }}>
                     {language.name.toUpperCase()}
                 </b>
-                <BsChevronRight className='Language-chevron' strokeWidth="1" />
+                <BsChevronRight
+                    className='Language-chevron'
+                    color={brightColor ? "#000" : "#FFF"}
+                    strokeWidth="1" />
             </div>
         </div>
     )

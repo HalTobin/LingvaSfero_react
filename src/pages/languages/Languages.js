@@ -3,6 +3,7 @@ import LanguageItem from './LanguageItem.js';
 import axios from 'axios'
 import { useState, useEffect } from 'react';
 import { BASE_URL_LOCAL } from '../../values/Const.js'
+import './Languages.css'
 
 function Languages() {
 
@@ -22,7 +23,7 @@ function Languages() {
             });
     }
 
-    return <div>
+    return <div className='LanguagesTab'>
         {((languages.length > 0) && (
             <>
                 <div>{languages.map((language, index) => (

@@ -1,6 +1,8 @@
 .Language-item {
     display: inline-block;
-    /* Ensures inline-block elements are not affected by margin collapse */
+    width: 100%;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
 }
 
 .Language-container {
@@ -8,10 +10,9 @@
     align-items: center;
     height: 2.5em;
     position: relative;
-    overflow: hidden;
+    overflow: hiddLanguagesen;
     border-radius: 64px;
     padding: 16px;
-    /* Apply padding to the container */
 }
 
 .Language-flag-container {
@@ -31,10 +32,11 @@
 .Language-name {
     font-weight: bold;
     font-size: medium;
-    /*color: black;*/
     margin-left: 16px;
+    flex: 1;
 }
 
 .Language-chevron {
-    padding-left: 16px;
+    padding-left: auto;
+    padding-right: 16px;
 }
