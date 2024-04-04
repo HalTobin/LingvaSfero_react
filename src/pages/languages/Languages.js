@@ -4,8 +4,11 @@ import axios from 'axios'
 import { useState, useEffect } from 'react';
 import { BASE_URL_LOCAL } from '../../values/Const.js'
 import './Languages.css'
+import { useNavigate } from 'react-router-dom';
 
 function Languages() {
+
+    const navigate = useNavigate();
 
     const [languages, setLanguages] = useState([]);
 
@@ -21,8 +24,15 @@ function Languages() {
                 setLanguages(sortedLanguages);
             })
             .catch((error) => {
-                //navigate('/login', { replace: true });
+                console.log(error);
             });
+    }
+
+    function navigateToSources(language) {
+        console.log(`Clicked on: ${language.name}`);
+        navigate('sources', {
+            state: { language: language }
+        });
     }
 
     return <div className='LanguagesTab'>
@@ -34,7 +44,10 @@ function Languages() {
                 <div>{languages
                     .filter(language => language.fullSupport == true)
                     .map((language, index) => (
-                        <LanguageItem language={language} />
+                        <LanguageItem
+                            key={language}
+                            onClick={() => navigateToSources(language)}
+                            language={language} />
                     ))}
                 </div>
                 <h2 className='LanguageSection'>
@@ -43,7 +56,10 @@ function Languages() {
                 <div>{languages
                     .filter(language => language.fullSupport == false)
                     .map((language, index) => (
-                        <LanguageItem language={language} />
+                        <LanguageItem
+                            key={language.iso}
+                            onClick={() => navigateToSources(language.iso)}
+                            language={language} />
                     ))}
                 </div>
             </>

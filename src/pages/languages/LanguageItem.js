@@ -4,7 +4,7 @@ import { BsChevronRight } from "react-icons/bs";
 import { BASE_URL_API } from '../../values/Const';
 import { useState, useEffect } from 'react';
 
-function LanguageItem({ language }) {
+function LanguageItem({ language, onClick }) {
 
     const [brightColor, setBrightColor] = useState(false);
 
@@ -15,7 +15,13 @@ function LanguageItem({ language }) {
 
     return (
         <div className="Language-item">
-            <div className="Language-container" style={{ backgroundColor: toColor(language.color) }}>
+            <span
+                onClick={onClick}
+                className="Language-container"
+                style={{
+                    backgroundColor: toColor(language.color),
+                    cursor: 'pointer'
+                }}>
                 <div className="Language-flag-container">
                     <img src={`${BASE_URL_API}/res/images?iso=${language.iso}&type=language`} className="Language-flag" />
                 </div>
@@ -28,7 +34,7 @@ function LanguageItem({ language }) {
                     className='Language-chevron'
                     color={brightColor ? "#000" : "#FFF"}
                     strokeWidth="1" />
-            </div>
+            </span>
         </div>
     )
 }

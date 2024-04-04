@@ -7,18 +7,16 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App-LingvaSfero">
-      <header className="App-header">
-        <AppBar />
-      </header>
-      <body className="App-body">
-        <BrowserRouter>
-          <Routes>
-            <Route exact path="/" element={<Languages />} />
-            <Route path="/sources" element={<Sources />} />
-          </Routes>
-        </BrowserRouter>
-      </body>
+    <div className="App-body">
+      <BrowserRouter>
+        <header className="App-header">
+          <AppBar />
+        </header>
+        <Routes>
+          <Route exact path="/" element={<Languages />} />
+          <Route path="/sources" element={<Sources />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
