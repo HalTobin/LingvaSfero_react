@@ -39,14 +39,14 @@ function Sources() {
         style={{ backgroundColor: toColor(language.colorDark) }}
     >
         <div className="SourcesCard">
-            {((sources.length > 0) && (<>
-                <div>{sources
+            {((sources.length > 0) && (
+                sources
                     .map((source, index) => (
                         <SourceItem
                             key={source.id}
                             source={source} />
-                    ))}</div>
-            </>))}
+                    ))
+            ))}
         </div>
     </div>
 }
