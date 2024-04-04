@@ -1,14 +1,15 @@
 .LanguagesTab {
-    padding: 1em;
-    width: 25%;
+    width: 25em;
     max-height: fit-content;
+    justify-content: center;
 }
 
 .LanguageSection {
     font-weight: bold;
     font-size: large;
-    margin-left: 32px;
     color: white;
+    justify-content: center;
     padding-top: 0.7em;
     padding-bottom: 0.2em;
+    text-align: center;
 }

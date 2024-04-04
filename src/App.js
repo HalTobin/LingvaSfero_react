@@ -2,16 +2,16 @@ import logo from './logo.svg';
 import './App.css'
 
 import AppBar from './header/AppBar';
-import Languages from './pages/languages/Languages';
+import AppContent from './pages/AppContent';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App-LingvaSfero">
       <header className="App-header">
         <AppBar />
       </header>
       <body className="App-body">
-        <Languages />
+        <AppContent />
       </body>
     </div>
   );
