@@ -1,0 +1,4 @@
+.SourcesTab {
+    display: flex;
+    max-height: fit-content;
+}

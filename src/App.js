@@ -1,8 +1,9 @@
-import logo from './logo.svg';
-import './App.css'
+import './App.css';
 
 import AppBar from './header/AppBar';
-import AppContent from './pages/AppContent';
+import Languages from './pages/languages/Languages';
+import Sources from './pages/sources/Sources';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
@@ -11,7 +12,12 @@ function App() {
         <AppBar />
       </header>
       <body className="App-body">
-        <AppContent />
+        <BrowserRouter>
+          <Routes>
+            <Route exact path="/" element={<Languages />} />
+            <Route path="/sources" element={<Sources />} />
+          </Routes>
+        </BrowserRouter>
       </body>
     </div>
   );

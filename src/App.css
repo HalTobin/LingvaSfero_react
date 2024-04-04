@@ -1,3 +1,11 @@
 .App-body {
     background-color: #202020;
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+
+    width: 100vw;
+    max-width: 100%;
+    min-height: 100vh;
+    max-height: max-content;
 }
