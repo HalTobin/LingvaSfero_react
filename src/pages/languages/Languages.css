@@ -3,3 +3,12 @@
     width: 25%;
     max-height: fit-content;
 }
+
+.LanguageSection {
+    font-weight: bold;
+    font-size: medium;
+    margin-left: 32px;
+    color: white;
+    padding-top: 0.7em;
+    padding-bottom: 0.2em;
+}
