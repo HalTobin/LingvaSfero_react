@@ -23,8 +23,7 @@
 }
 
 .thumbnail {
-    width: 100%;
-    height: 3em;
+    align-self: center;
     width: 3em;
 }
 
