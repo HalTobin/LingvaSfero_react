@@ -6,11 +6,10 @@
 }
 
 .SourcesCard {
-    gap: 20px;
-    justify-content: space-evenly;
-    margin: 16px auto;
+    justify-content: center;
+    gap: 16px 20px;
+    margin: 20px 20px;
     display: flex;
-    align-items: baseline;
     flex-direction: row;
     flex-wrap: wrap;
 }
