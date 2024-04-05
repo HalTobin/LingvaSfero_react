@@ -13,3 +13,11 @@
     flex-direction: row;
     flex-wrap: wrap;
 }
+
+.SourcesCard::after {
+    content: "";
+    min-width: 16em;
+    max-width: 20em;
+    padding: 6px;
+    flex: 1 0 300px;
+}
