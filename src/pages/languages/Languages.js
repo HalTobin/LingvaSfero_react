@@ -45,7 +45,7 @@ function Languages() {
                     .filter(language => language.fullSupport == true)
                     .map((language, index) => (
                         <LanguageItem
-                            key={language}
+                            key={language.iso}
                             onClick={() => navigateToSources(language)}
                             language={language} />
                     ))}

@@ -3,14 +3,10 @@
     overflow: hidden;
     background-color: #333333;
     color: white;
-
     box-shadow: 0px 0px 8px black;
-    min-width: 16em;
-    max-width: 20em;
     height: 12em;
     text-align: center;
     padding: 6px;
-    flex: 1 0 300px;
 }
 
 .thumbnail-container {
