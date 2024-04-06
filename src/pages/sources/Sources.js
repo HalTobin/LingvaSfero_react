@@ -5,7 +5,8 @@ import { toColor } from '../../values/Color';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { BASE_URL_LOCAL } from '../../values/Const';
-import SourceItem from './SourceItem';
+import SourceItem from './elements/SourceItem';
+import SourceModal from './elements/SourceModal';
 
 function Sources() {
 
@@ -13,6 +14,7 @@ function Sources() {
     const language = location.state.language;
 
     const [sources, setSources] = useState([]);
+    const [selectedSource, setSelectedSource] = useState(null);
 
     useEffect(() => {
         fetchSources(language.iso);
@@ -44,10 +46,15 @@ function Sources() {
                     .map((source, index) => (
                         <SourceItem
                             key={source.id}
+                            onClick={() => setSelectedSource(source)}
                             source={source} />
                     ))
             ))}
         </div>
+        <SourceModal
+            source={selectedSource}
+            languageColor={language.color}
+            closeModal={() => setSelectedSource(null)} />
     </div>
 }
 

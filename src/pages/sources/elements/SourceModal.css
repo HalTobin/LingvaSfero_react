@@ -1,0 +1,93 @@
+.source-dialog {
+    width: 40em;
+    max-width: 90vw;
+    border-radius: 16px;
+    box-shadow: 0px 0px 512px black;
+    background-color: #333333;
+    border: black;
+    color: white;
+}
+
+.source-dialog:focus-visible {
+    outline: none;
+}
+
+.dialog-close {
+    position: absolute;
+    width: 1.5em;
+    height: 1.5em;
+    padding: 16px;
+    top: 0px;
+    right: 0px;
+}
+
+.source-container {
+    align-items: center;
+    justify-content: center;
+}
+
+.dialog-thumbnail-container {
+    align-self: center;
+    align-items: center;
+    width: 6em;
+    height: 6em;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.dialog-thumbnail {
+    align-self: center;
+    width: 6em;
+}
+
+.dialog-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.dialog-description {
+    align-items: center;
+    text-align: center;
+    height: 3.5rem;
+    margin-left: 8px;
+    margin-right: 8px;
+    overflow: hidden;
+}
+
+.dialog-button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.dialog-link-button {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 64px;
+    padding: 4px 16px;
+    height: 2rem;
+    line-height: 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    border: none;
+    text-decoration: none;
+}
+
+.dialog-link-text {
+    position: relative;
+    top: 1px;
+}
+
+.dialog-link-icon {
+    vertical-align: middle;
+    margin-left: 8px;
+    width: 1.4em;
+    height: 1.4em;
+}
