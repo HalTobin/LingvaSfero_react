@@ -26,6 +26,30 @@
     justify-content: center;
 }
 
+.dialog-main-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.dialog-main-level {
+    margin-left: 50%;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.dialog-main-type-logo {
+    width: 2em;
+}
+
+.dialog-main-type {
+    display: flex;
+    flex-direction: column;
+    margin-left: 16px;
+    font-weight: bold;
+    align-items: center;
+}
+
 .dialog-thumbnail-container {
     align-self: center;
     align-items: center;

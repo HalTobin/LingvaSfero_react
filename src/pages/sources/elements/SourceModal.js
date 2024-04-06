@@ -3,6 +3,7 @@ import './SourceModal.css'
 import { useEffect, useRef } from "react";
 import { MdClose, MdLink } from 'react-icons/md';
 import { isColorBright, toColor } from '../../../values/Color';
+import { SourceLevel, SourceType } from '../../../values/SourceProperties';
 
 function SourceModal({ source, languageColor, closeModal }) {
     const ref = useRef();
@@ -10,6 +11,7 @@ function SourceModal({ source, languageColor, closeModal }) {
     useEffect(() => {
         if (source != null) {
             ref.current?.showModal();
+            console.log(SourceType[source.type])
         } else {
             ref.current?.close();
         }
@@ -28,8 +30,21 @@ function SourceModal({ source, languageColor, closeModal }) {
                         className='dialog-close'
                         onClick={closeModal} />
                 </a>
-                <div className="dialog-thumbnail-container">
-                    {source.thumbnail && <img src={source.thumbnail} alt="Thumbnail" className="dialog-thumbnail" />}
+                <div className='dialog-main-container'>
+                    <div className="dialog-thumbnail-container">
+                        {source.thumbnail && <img src={source.thumbnail} alt="Thumbnail" className="dialog-thumbnail" />}
+                    </div>
+                    <p className='dialog-main-level'>
+                        {SourceLevel[source.levelMin]}-{SourceLevel[source.levelMax]}
+                    </p>
+                    <div className='dialog-main-type'>
+                        <img
+                            className='dialog-main-type-logo'
+                            src={SourceType[source.type].icon} />
+                        <p>
+                            {SourceType[source.type].title.toUpperCase()}
+                        </p>
+                    </div>
                 </div>
                 <div className="dialog-info-container">
                     <h3 className="dialog-title">{source.name}</h3>
