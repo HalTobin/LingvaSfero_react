@@ -33,6 +33,7 @@ function Languages() {
         navigate('sources', {
             state: { language: language }
         });
+        window.scrollTo(0, 0);
     }
 
     return <div className='LanguagesTab'>
@@ -58,7 +59,7 @@ function Languages() {
                     .map((language, index) => (
                         <LanguageItem
                             key={language.iso}
-                            onClick={() => navigateToSources(language.iso)}
+                            onClick={() => navigateToSources(language)}
                             language={language} />
                     ))}
                 </div>

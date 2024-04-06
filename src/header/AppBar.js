@@ -11,7 +11,10 @@ function AppBar() {
             <span
                 className="logo"
                 style={{ cursor: 'pointer' }}
-                onClick={() => navigate(-1)}>
+                onClick={() => {
+                    window.scrollTo(0, 0);
+                    navigate(-1);
+                }}>
                 <img src={appLogo} className="App-logo" alt="logo" />
             </span>
         </div >
