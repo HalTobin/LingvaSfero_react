@@ -35,7 +35,7 @@
 .dialog-main-level {
     margin-left: 50%;
     font-weight: bold;
-    font-size: 2rem;
+    font-size: 1.6rem;
 }
 
 .dialog-main-type-logo {
@@ -45,7 +45,7 @@
 .dialog-main-type {
     display: flex;
     flex-direction: column;
-    margin-left: 16px;
+    margin-left: 32px;
     font-weight: bold;
     align-items: center;
 }
