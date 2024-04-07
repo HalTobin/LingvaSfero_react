@@ -37,3 +37,5 @@ export const SourceType = {
     1: { title: "Youtube", icon: youtubeLogo },
     2: { title: "Spotify", icon: spotifyLogo }
 }
+
+export const types = [SourceType[0], SourceType[1], SourceType[2]]
