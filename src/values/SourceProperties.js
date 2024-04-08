@@ -33,9 +33,9 @@ export const SourceTheme = {
 }
 
 export const SourceType = {
-    0: { title: "RSS", icon: rssLogo },
-    1: { title: "Youtube", icon: youtubeLogo },
-    2: { title: "Spotify", icon: spotifyLogo }
+    0: { id: 0, title: "RSS", icon: rssLogo },
+    1: { id: 1, title: "Youtube", icon: youtubeLogo },
+    2: { id: 2, title: "Spotify", icon: spotifyLogo }
 }
 
 export const types = [SourceType[0], SourceType[1], SourceType[2]]
