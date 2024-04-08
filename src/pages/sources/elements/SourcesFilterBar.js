@@ -5,9 +5,10 @@ import { toColor } from 'values/Color';
 import Dropdown from '../components/dropdown/Dropdown';
 import DropdownItem from '../components/dropdownitem/DropdownItem';
 
-function SourcesFilterBar(filters, isRegionAvailable, onFilterUpdate) {
+function SourcesFilterBar(filters, bgColor, isRegionAvailable, onFilterUpdate) {
     return <div
-        className="filter-container">
+        className="filter-container"
+        style={{ backgroundColor: toColor(bgColor) }}>
         <div className="filter-bar">
             {/*isRegionAvailable && <div className="dropdown"><span>Region</span></div>*/}
             <Dropdown

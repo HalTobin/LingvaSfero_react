@@ -8,8 +8,8 @@ function DropdownButton({ children, open, toggle }) {
         className={`dropdown-btn ${open ? "button-open" : null}`}
         onClick={toggle}>
         {children}
-        <span>
-            {open ? <FaChevronUp /> : <FaChevronDown className="dropdown-toggle-icon" />}
+        <span className="dropdown-toggle-icon">
+            {open ? <FaChevronUp /> : <FaChevronDown />}
         </span>
     </div>
 }

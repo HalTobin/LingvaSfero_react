@@ -20,6 +20,7 @@ function Sources() {
 
     useEffect(() => {
         fetchSources(language.iso);
+        console.log(language);
     }, []);
 
     useEffect(() => {
@@ -64,7 +65,7 @@ function Sources() {
         <SourcesFilterBar
             filters={filter}
             isRegionAvailable={false}
-            color={language.colorDark} />
+            bgColor={0xff0000} />
         <div className="SourcesCard">
             {((sources.length > 0) && (
                 sources
