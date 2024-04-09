@@ -12,6 +12,10 @@ function Dropdown({ buttonText, content }) {
         setOpen((open) => !open);
     }
 
+    const handleFilterSelect = () => {
+        setOpen(false); // Close the dropdown when a filter is selected
+    }
+
     useEffect(() => {
         const handler = (event) => {
             if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -34,7 +38,9 @@ function Dropdown({ buttonText, content }) {
             open={open}>
             {buttonText}
         </DropdownButton>
-        <DropdownContent open={open}>{content}</DropdownContent>
+        <DropdownContent
+            open={open}
+            onClick={handleFilterSelect}>{content}</DropdownContent>
     </div>
 }
 

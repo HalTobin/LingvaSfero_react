@@ -17,6 +17,11 @@ function SourceModal({ source, languageColor, closeModal }) {
         }
     }, [source]);
 
+    function displayLevel(min, max) {
+        if (min.title == max.title) return min.title;
+        else return `${min.title}-${max.title}`;
+    }
+
     return (
         <dialog
             ref={ref}
@@ -35,7 +40,7 @@ function SourceModal({ source, languageColor, closeModal }) {
                         {source.thumbnail && <img src={source.thumbnail} alt="Thumbnail" className="dialog-thumbnail" />}
                     </div>
                     <p className='dialog-main-level'>
-                        {SourceLevel[source.levelMin]}-{SourceLevel[source.levelMax]}
+                        {displayLevel(SourceLevel[source.levelMin], SourceLevel[source.levelMax])}
                     </p>
                     <div className='dialog-main-type'>
                         <img

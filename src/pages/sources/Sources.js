@@ -13,14 +13,20 @@ function Sources() {
 
     const location = useLocation();
     const language = location.state.language;
+    var bgColor = toColor(language.colorDark);
 
     const [sources, setSources] = useState([]);
     const [selectedSource, setSelectedSource] = useState(null);
-    const [filter, setFilter] = useState();
+    const [filter, setFilter] = useState({
+        language_iso: language.iso,
+        region_iso: "All",
+        type: -1,
+        theme: -1,
+        level: -1
+    });
 
     useEffect(() => {
         fetchSources(language.iso);
-        console.log(language);
     }, []);
 
     useEffect(() => {
@@ -40,15 +46,16 @@ function Sources() {
     }
 
     const fetchSourcesWithFilter = (iso, sourceFilter) => {
-        axios.get(`${BASE_URL_LOCAL}/api/source/sources`, {
+        axios.get(`${BASE_URL_LOCAL}/api/source/sources/filter`, {
             params: {
                 language_iso: iso,
-                region_iso: "ALL",
-                type: -1,
-                theme: -1,
-                level: -1
+                region_iso: "WORLD",
+                type: sourceFilter.type,
+                theme: sourceFilter.theme,
+                level: sourceFilter.level
             }
         }).then(response => {
+            console.log(response.data);
             setSources(sortSources(response.data));
         })
             .catch((error) => { });
@@ -60,12 +67,13 @@ function Sources() {
 
     return <div
         className="SourcesTab"
-        style={{ backgroundColor: toColor(language.colorDark) }}
+        style={{ backgroundColor: bgColor }}
     >
         <SourcesFilterBar
             filters={filter}
             isRegionAvailable={false}
-            bgColor={0xff0000} />
+            bgColor={bgColor}
+            onFilterUpdate={(newFilter) => setFilter(newFilter)} />
         <div className="SourcesCard">
             {((sources.length > 0) && (
                 sources
