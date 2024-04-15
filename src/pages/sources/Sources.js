@@ -71,7 +71,7 @@ function Sources() {
     >
         <SourcesFilterBar
             filters={filter}
-            isRegionAvailable={false}
+            isRegionAvailable={language.iso}
             bgColor={bgColor}
             onFilterUpdate={(newFilter) => setFilter(newFilter)} />
         <div className="SourcesCard">
