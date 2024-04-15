@@ -1,4 +1,4 @@
-import { SourceType, SourceLevel, SourceTheme, types, levels } from 'values/SourceProperties';
+import { SourceType, SourceLevel, SourceTheme, types, levels, themes } from 'values/SourceProperties';
 import './SourcesFilterBar.css'
 
 import axios from 'axios';
@@ -11,20 +11,33 @@ function SourcesFilterBar({ filters, bgColor, languageIso, onFilterUpdate }) {
 
     const [regions, setRegions] = useState([]);
 
-    useEffect(() => { fetchRegions(languageIso) }, []);
+    useEffect(() => {
+        console.log(themes);
+        fetchRegions(languageIso)
+    }, []);
 
     const fetchRegions = (iso) => {
         axios.get(`${BASE_URL_LOCAL}/api/region/regions`, {
             params: { language_iso: iso }
         })
             .then(response => {
-                setRegions(sortRegions(response.data));
+                var regions = response.data;
+                if (regions.length > 0) {
+                    setRegions(sortRegions(regions));
+                }
             })
             .catch((error) => { console.log(error); });
     }
 
     function sortRegions(regions) {
-        return regions.sort((a, b) => a.name.localeCompare(b.name));
+        var result = regions.sort((a, b) => a.name.localeCompare(b.name));
+        result.unshift({
+            "iso": "WORLD",
+            "languageIso": "WORLD",
+            "name": "World",
+            "flagUrl": "rsc/region/esp_mex.png"
+        });
+        return result;
     }
 
     return <div
@@ -33,17 +46,18 @@ function SourcesFilterBar({ filters, bgColor, languageIso, onFilterUpdate }) {
         <div className="filter-bar">
             {(regions.length > 0) &&
                 <Dropdown
-                    buttonText={(filters.regionIso != "WORLD") ? regions.find((region) => region.iso == filters.regionIso) : "Region"}
+                    buttonText={(filters.region_iso != "WORLD") ? regions.find((region) => region.iso == filters.region_iso).name : "Region"}
                     content={
                         regions.map((region, index) => (
                             <DropdownItem
                                 key={region.iso}
                                 onClick={() => {
-                                    const newFilter = { ...filters, region: region.iso };
+                                    const newFilter = { ...filters, region_iso: region.iso };
                                     onFilterUpdate(newFilter);
                                 }}>
-                                <img className="dropdown-item-img"
-                                    src={`${BASE_URL_API}/region/image&iso=${languageIso}-${region.iso}`} />
+                                <div className="dropdown-item-img-container">
+                                    <img src={`${BASE_URL_API}/region/image?iso=${region.iso}`} className="dropdown-flag" />
+                                </div>
                                 {region.name}
                             </DropdownItem>
                         ))
@@ -61,6 +75,20 @@ function SourcesFilterBar({ filters, bgColor, languageIso, onFilterUpdate }) {
                             <img className="dropdown-item-img"
                                 src={type.icon} />
                             {type.title}
+                        </DropdownItem>
+                    ))
+                } />
+            <Dropdown
+                buttonText={(filters.theme != -1) ? themes.find((theme) => theme.id == filters.theme).title : "Theme"}
+                content={
+                    themes.map((theme, index) => (
+                        <DropdownItem
+                            key={theme.id}
+                            onClick={() => {
+                                const newFilter = { ...filters, theme: theme.id };
+                                onFilterUpdate(newFilter);
+                            }}>
+                            {theme.title}
                         </DropdownItem>
                     ))
                 } />

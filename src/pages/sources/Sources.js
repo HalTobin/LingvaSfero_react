@@ -19,7 +19,7 @@ function Sources() {
     const [selectedSource, setSelectedSource] = useState(null);
     const [filter, setFilter] = useState({
         language_iso: language.iso,
-        region_iso: "All",
+        region_iso: "WORLD",
         type: -1,
         theme: -1,
         level: -1
@@ -49,13 +49,12 @@ function Sources() {
         axios.get(`${BASE_URL_LOCAL}/api/source/sources/filter`, {
             params: {
                 language_iso: iso,
-                region_iso: "WORLD",
+                region_iso: sourceFilter.region_iso,
                 type: sourceFilter.type,
                 theme: sourceFilter.theme,
                 level: sourceFilter.level
             }
         }).then(response => {
-            console.log(response.data);
             setSources(sortSources(response.data));
         })
             .catch((error) => { });
@@ -71,7 +70,7 @@ function Sources() {
     >
         <SourcesFilterBar
             filters={filter}
-            isRegionAvailable={language.iso}
+            languageIso={language.iso}
             bgColor={bgColor}
             onFilterUpdate={(newFilter) => setFilter(newFilter)} />
         <div className="SourcesCard">

@@ -14,15 +14,31 @@
 .filter-bar {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
-    margin-left: 25vw;
-    margin-right: 25vw;
     padding: 0 24px;
     width: 100%;
+}
+
+.dropdown {
+    margin-right: 1rem;
 }
 
 .dropdown-item-img {
     width: 1.8rem;
     font-size: 1.6rem;
     margin-right: 1rem;
+}
+
+.dropdown-item-img-container {
+    width: 1.8em;
+    height: 1.8em;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 0.2em solid black;
+    margin-right: 1rem;
+}
+
+.dropdown-flag {
+    height: 1.8em;
+    width: 1.8em;
 }
